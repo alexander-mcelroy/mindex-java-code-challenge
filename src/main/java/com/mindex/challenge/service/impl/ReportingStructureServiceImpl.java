@@ -48,7 +48,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
             } else if (path.contains(dr)) {
                 throw new RuntimeException("non-DAG heirarchy, cycle discovered at employeeId: " + drId.getEmployeeId());
             }
-
+            //TODO Build tree
             path.add(dr);
             count += 1 + dfsCountReports(dr, path);
         }
